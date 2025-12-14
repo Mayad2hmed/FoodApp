@@ -31,4 +31,9 @@
 span.textSpan{
   color: rgba(223, 224, 224, 1);
 }
-
+.sidebar-container{
+  overflow-y: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: 100%;
+}

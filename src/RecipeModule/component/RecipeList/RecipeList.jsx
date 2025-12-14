@@ -33,7 +33,7 @@ export default function RecipeList() {
   </h4>}
        description={'You can now add your items that any user can order it from the Application and you can edit'} imgUrl={headerImg}></Header>
   <div className="recipes-datails d-flex justify-content-between align-items-center p-4 m-3">
-      <div className="caption" style={{marginLeft:'220px',width:'1130px'}}>
+      <div className="caption" >
          <h3>Recipe Table Details</h3>
     
        <p>You can check all details</p>
@@ -41,7 +41,7 @@ export default function RecipeList() {
       <button className='btn btn-resipe text-white' onClick={()=>navigate('/dashboard/receipe-data')}>Add New Item </button>
      </div>
       
-        <table className="table" style={{marginLeft:'280px',width:'1000px'}}>
+        <table className="table">
           <thead>
             <tr>
              
@@ -58,7 +58,7 @@ export default function RecipeList() {
 {RecipesList.length > 0 ? RecipesList.map(recipe =>
             <tr key={recipe.id}>
               <th scope='row' className='w-50'>{recipe.name}</th>
-              <td><img className='w-50' src={`https://upskilling-egypt.com:3006/${recipe.imagePath}`}></img></td>
+              <td><img className='w-25' src={`https://upskilling-egypt.com:3006/${recipe.imagePath}`}></img></td>
               <td>{recipe.price}</td>
               <td>{recipe.description}</td>
               <td>20</td>

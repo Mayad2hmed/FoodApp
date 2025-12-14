@@ -4,7 +4,7 @@ export default function Header({title,description,imgUrl}) {
   return (
     <>
       <header>
-        <div className="container-fluid bg-success" style={{marginLeft:'220px',width:'1130px',overflow:'hidden'}}>
+        <div className="container-fluid bg-success">
         <div className="row">
             <div className="col-md-8 text-white">
                 <div className='h-100 d-flex flex-column justify-content-center p-4'>

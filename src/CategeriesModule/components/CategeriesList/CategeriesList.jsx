@@ -30,7 +30,7 @@ export default function CategeriesList() {
     <span className="textSpan fw-light">Items</span>
   </h4> } description={'You can now add your items that any user can order it from the Application and you can edit'} imgUrl={headerImg}></Header>
         <div className="categories-datails d-flex justify-content-between align-items-center p-4 m-3 " >
-      <div className="caption" style={{marginLeft:'220px',width:'1130px'}}>
+      <div className="caption">
          <h3>Categories Table Details</h3>
     
        <p>You can check all details</p>
@@ -38,7 +38,7 @@ export default function CategeriesList() {
       <button className='btn btn-resipe text-white' onClick={()=>navigate('/dashboard/categpries-data')}>Add New Category </button>
      </div>
          
-          <table className="table" style={{marginLeft:'280px',width:'1000px'}}>
+          <table className="table">
   <thead>
     <tr >
       <th scope="col">#</th>

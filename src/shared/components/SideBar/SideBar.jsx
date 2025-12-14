@@ -10,19 +10,9 @@ export default function SideBar() {
   return (
     <>
 
-     <div className="sidebar-container " style={{display:'flex',
-      height:"100vh",
-      
-
-     }}>
+     <div className="sidebar-container ">
        <Sidebar className='' collapsed={isCollapsed}
-         style={{
-    height: "100vh", 
-    position: "fixed",
-    
-    zIndex:'999'
-   
-  }}>
+        >
         <Menu>
           <div className='img text-center py-4'>
           <img className='w-75' onClick={toggleCollapse} src={logoSidebar} alt=''></img>
