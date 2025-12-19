@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../../shared/components/Header/Header'
 import headerImg from '../../../assets/images/headerImg.png'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../../context/AuthContext'
+
 export default function Dashboard() {
+  let{loginData}=useContext(AuthContext)
   let navigate =useNavigate()
   
   return (
     <>
       <Header title={
-        <h4 className="" >
+        <div >
     <span className="text-white fw-bold">Welcome</span>{' '}
-    <span className="textSpan fw-light">Upskilling !</span>
-  </h4>
+    <span className="textSpan fw-light">{loginData?.userName} !</span>
+  </div>
       } description={'This is a welcoming screen for the entry of the application , you can now see the options'} imgUrl={headerImg}></Header>
      <div className="home-datails d-flex justify-content-between align-items-center p-4 m-3" >
       <div className="caption">

@@ -18,6 +18,7 @@ import CategeriesData from './CategeriesModule/components/CategeriesData/Categer
 import UsersList from './UsersModule/components/UsersList/UsersList'
 import { ToastContainer } from 'react-toastify'
 import NoData from './shared/components/NoData/NoData'
+import ProtectedRoute from './shared/components/ProtectedRoute/ProtectedRoute'
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
   },
   {
     path: 'dashboard',
-    element: <MasterLayout></MasterLayout>,
+    element: <ProtectedRoute><MasterLayout/></ProtectedRoute>,
     errorElement: <NotFound></NotFound>,
     children: [
       { index: true, element: <Dashboard></Dashboard> },

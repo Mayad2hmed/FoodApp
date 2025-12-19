@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 export default function Header({title,description,imgUrl}) {
+  
   return (
-    <>
-      <header>
-        <div className="container-fluid bg-success">
+    
+       <header className="p-3">
+      <div className=" bg-success rounded-3 p-4">
         <div className="row">
+          
             <div className="col-md-8 text-white">
-                <div className='h-100 d-flex flex-column justify-content-center p-4'>
+                <div className='h-100 d-flex flex-column justify-content-cente'>
                 <h4>{title}</h4>
                 <p>{description}</p>
                 </div>
@@ -19,7 +21,9 @@ export default function Header({title,description,imgUrl}) {
             </div>
         </div>
         </div>
+        
+
       </header>
-    </>
+   
   )
 }
