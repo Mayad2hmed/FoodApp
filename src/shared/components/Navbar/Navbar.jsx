@@ -14,7 +14,9 @@ export default function Navbar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav ms-auto mb-2 mb-lg-0">
-        <a className="nav-link active" aria-current="page" href="#">{loginData?.userEmail}</a>
+                <a className="nav-link active border rounded-circle p-3 bg-danger " aria-current="page" href="#">{loginData?.imagePath}</a>
+
+        <a className="nav-link active" aria-current="page" href="#">{loginData?.userName}</a>
         
       </div>
     </div>

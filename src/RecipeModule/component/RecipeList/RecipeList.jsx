@@ -8,8 +8,10 @@ import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import DeleteConfirmation from '../../../shared/components/DeleteConfirmation/DeleteConfirmation'
-
+import FillRecipe from '../../../shared/components/FillRecipe/FillRecipe'
+import Dropdown from 'react-bootstrap/Dropdown';
 export default function RecipeList() {
+  let navigate=useNavigate()
     const[recipeId,setRecipeId]=useState(0)
     const[recipeName,setRecipeName]=useState('')
     const [show, setShow] = useState(false);
@@ -20,7 +22,7 @@ export default function RecipeList() {
       setRecipeName(recipe.name);
       setShow(true)
     }
-  let navigate=useNavigate()
+ 
   const [RecipesList, setRecipesList] = useState([])
   const getAllRecipes = async () => {
     try {
@@ -60,14 +62,7 @@ export default function RecipeList() {
     <span className="textSpan fw-light">Items !</span>
   </h4>}
        description={'You can now add your items that any user can order it from the Application and you can edit'} imgUrl={headerRecipe}></Header>
-  <div className="recipes-datails d-flex justify-content-between align-items-center p-4 m-3">
-      <div className="caption" >
-         <h3>Recipe Table Details</h3>
-    
-       <p>You can check all details</p>
-      </div>
-      <button className='btn btn-resipe text-white' onClick={()=>navigate('/dashboard/receipe-data')}>Add New Item </button>
-     </div>
+ <FillRecipe></FillRecipe>
          <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
@@ -109,10 +104,31 @@ export default function RecipeList() {
               <td>{recipe.price}</td>
               <td>{recipe.description}</td>
               <td>20</td>
-              <td>{recipe.category[0]?.name}<i className='fa-solid fa-ellipsis'></i></td>
+              <td>{recipe.category[0]?.name}</td>
                <td>
-    <i className='fa fa-edit text-warning mx-2' aria-hidden="true"></i>
-    <i onClick={()=>handleShow(recipe)} className='fa fa-trash text-danger' aria-hidden="true"></i>
+   
+    <Dropdown align="end">
+    <Dropdown.Toggle variant="light" className='border-0'>
+      <i className='fa-solid fa-ellipsis'></i>
+    </Dropdown.Toggle>
+
+    <Dropdown.Menu>
+         <Dropdown.Item>
+          <i class="fa-solid fa-eye text-success me-2"></i>
+        
+      Veiw
+      </Dropdown.Item>
+      <Dropdown.Item  onClick={() =>{console.log('EDIT CLICKED', recipe.id);navigate(`/dashboard/recipes/edit/${recipe.id}`)}}>
+        <i className='fa fa-edit text-success me-2'></i>
+        Edit
+      </Dropdown.Item>
+
+      <Dropdown.Item onClick={()=>handleShow(recipe)}>
+        <i className='fa fa-trash text-success me-2'></i>
+        Delete
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
   </td>
               
               

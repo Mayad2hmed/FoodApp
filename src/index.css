@@ -3,6 +3,17 @@
   background-size: cover;
   background-position: center center;
 }
+
+button:hover
+ {
+  background-color: #198754 !important;
+  
+}
+
+button.cancel:hover{
+  background-color: red  !important;
+}
+
 .bg-overlay{
   background: linear-gradient(45deg,rgba(47, 140, 96, .6),rgba(0, 0, 0, 0.99));
 }
@@ -36,4 +47,16 @@ span.textSpan{
   flex-grow: 1;
   flex-shrink: 0;
   height: 100%;
+}
+.border-dashed {
+  border-style: dashed !important;
+}
+span.textUpload{
+  color: rgba(0, 146, 71, 1);
+}
+.dropdown-toggle::after{
+  display: none !important;
+}
+.headerCircle{
+  background-image:url(../src/assets/header.svg);
 }

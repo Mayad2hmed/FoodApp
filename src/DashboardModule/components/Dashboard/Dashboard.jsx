@@ -7,6 +7,7 @@ import { AuthContext } from '../../../context/AuthContext'
 export default function Dashboard() {
   let{loginData}=useContext(AuthContext)
   let navigate =useNavigate()
+
   
   return (
     <>

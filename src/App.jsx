@@ -50,7 +50,8 @@ function App() {
       { path: 'categories', element: <CategeriesList></CategeriesList> },
       { path: 'categpries-data', element: <CategeriesData></CategeriesData> },
       { path: 'users', element: <UsersList></UsersList> },
-      { path: 'noData', element: <NoData></NoData> }
+      { path: 'noData', element: <NoData></NoData> },
+      { path:"/dashboard/recipes/edit/:id", element:<RecipeData></RecipeData>} 
 
     ]
   }])
