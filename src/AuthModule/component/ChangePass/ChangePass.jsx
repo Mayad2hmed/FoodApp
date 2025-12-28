@@ -8,6 +8,7 @@ import axios from 'axios';
 
 export default function ChangePass({ show, handleClose }) {
   
+const [showPassword, setShowPassword] = useState(false);
 
 const {
     register,
@@ -68,8 +69,8 @@ const {
                     </div>
                                 <form onSubmit={handleSubmit(onSubmit)}>
             <div className="input-group mb-3">
-  <span className="input-group-text" id="basic-addon1"><i className="fa-regular fa-envelope" aria-hidden="true"></i></span>
-  <input type="password"{...register('oldPassword',
+  <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock" aria-hidden="true"></i></span>
+  <input type={showPassword ? 'text' : 'password'}{...register('oldPassword',
     {
       required:'feild is required'
       
@@ -77,29 +78,59 @@ const {
   )}
    className="form-control" placeholder="Old Password" aria-label="oldPassword" aria-describedby="basic-addon1" 
               />
+                <span className="input-group-text"
+                      id="basic-addon1"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setShowPassword(!showPassword)}>
+                         <i
+          className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`} 
+          aria-hidden="true"
+        ></i>
+                             </span>
   { errors.oldPassword&& <div className='alert alert-danger p-2'>{errors.oldPassword.message}</div>}
 </div>
 <div className="input-group mb-3">
   <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock" aria-hidden="true"></i></span>
-  <input type="password" {...register('newPassword',{
+  <input type={showPassword ? 'text' : 'password'} {...register('newPassword',{
     required:"feild is required",
 
   })}
   className="form-control" placeholder="New Password" aria-label="newPassword" aria-describedby="basic-addon1"  
               />
+                <span className="input-group-text"
+                      id="basic-addon1"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setShowPassword(!showPassword)}>
+                         <i
+          className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`} 
+          aria-hidden="true"
+        ></i>
+                             </span>
      { errors.newPassword&& <div className='alert alert-danger p-2'>{errors.newPassword.message}</div>}
 
 
 </div>
 <div className="input-group mb-3">
-  <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock" aria-hidden="true"></i></span>
-  <input type="password" {...register('confirmNewPassword',
+  <span className="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+  <input  type={showPassword ? 'text' : 'password'} {...register('confirmNewPassword',
      {
       required:'feild is required'
     }
   )}
   className="form-control" placeholder="Confirm New Password" aria-label="confirmNewPassword" aria-describedby="basic-addon1" 
              />
+                             <span className="input-group-text"
+                      id="basic-addon1"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setShowPassword(!showPassword)}>
+                         <i
+          className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`} 
+          aria-hidden="true"
+        ></i>
+                             </span>
+                   
+                     
+                   
    { errors.confirmNewPassword&& <div className='alert alert-danger p-2'>{errors.confirmNewPassword.message}</div>}
 
 </div>

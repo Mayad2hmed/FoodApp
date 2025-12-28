@@ -135,7 +135,7 @@ export default function Register() {
     
     
     <div className='links d-flex justify-content-end'>
-  <Link to="/login" className='text-success text-decoration-none'>log in</Link>
+  <Link to="/verfiy-account" className='text-success text-decoration-none'>log in</Link>
 
 </div>
     

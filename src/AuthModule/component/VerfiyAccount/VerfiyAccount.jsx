@@ -3,9 +3,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import axios from "axios";
 import logo from '../../../assets/images/logo.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function VerfiyAccount() {
+        let navigate=useNavigate()
+
     const {
+
     register,
     handleSubmit,
     formState: { errors },
@@ -27,6 +31,7 @@ export default function VerfiyAccount() {
       );
 
       toast.success("Account verified successfully");
+      navigate("/login")
     } catch (error) {
       toast.error(
         error.response?.data?.message || "Verification failed"

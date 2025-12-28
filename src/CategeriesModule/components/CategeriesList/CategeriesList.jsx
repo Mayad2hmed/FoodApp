@@ -91,8 +91,8 @@ export default function CategeriesList() {
         </Modal.Footer>
       </Modal>
       <table className="table">
-        <thead>
-          <tr >
+        <thead  >
+          <tr>
             <th scope="col">#</th>
             <th scope="col">Category Name</th>
             <th scope="col">Category Creation Date</th>
@@ -103,7 +103,7 @@ export default function CategeriesList() {
         <tbody>
           {categoriesList.length > 0 ? categoriesList.map(category =>
             <tr key={category.id}>
-              <th scope='row'>{category.id}</th>
+              <td scope='row'>{category.id}</td>
               <td>{category.name}</td>
               <td>{category.creationDate}</td>
               <Dropdown align="end">

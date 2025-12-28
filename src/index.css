@@ -60,3 +60,24 @@ span.textUpload{
 .headerCircle{
   background-image:url(../src/assets/header.svg);
 }
+.notfound-bg {
+  position: fixed;
+  bottom: 0;
+  right: -5px;   /* ⬅️ نزوده شوية */
+  width: 820px;   /* ⬅️ نكبر العرض */
+  height: 600px;
+}
+
+.notfound-svg {
+  position: absolute;
+  inset: 0;
+}
+
+.notfound-robot {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  display: block;
+  margin: 80px auto 20px;
+}
+

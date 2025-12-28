@@ -19,6 +19,7 @@ import UsersList from './UsersModule/components/UsersList/UsersList'
 import { ToastContainer } from 'react-toastify'
 import NoData from './shared/components/NoData/NoData'
 import ProtectedRoute from './shared/components/ProtectedRoute/ProtectedRoute'
+import FavList from './FavList/FavList'
 
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
       { path: 'categpries-data', element: <CategeriesData></CategeriesData> },
       { path: 'users', element: <UsersList></UsersList> },
       { path: 'noData', element: <NoData></NoData> },
-      { path:"/dashboard/recipes/edit/:id", element:<RecipeData></RecipeData>} 
+      { path:"/dashboard/recipes/edit/:id", element:<RecipeData></RecipeData>} ,
+      { path:"/dashboard/favList", element:<FavList></FavList>} 
+
 
     ]
   }])

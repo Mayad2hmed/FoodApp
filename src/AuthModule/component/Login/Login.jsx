@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import logo from '../../../assets/images/logo.png'
 import { useForm } from 'react-hook-form'
@@ -6,6 +6,8 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 import  { AuthContext } from '../../../context/AuthContext'
 export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+  
   let{saveLogingData}=useContext(AuthContext)
   let{register,formState:{errors},handleSubmit}=useForm()
   let navigate=useNavigate()
@@ -60,17 +62,22 @@ export default function Login() {
 </div>
 <div className="input-group mb-3">
   <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock" aria-hidden="true"></i></span>
-  <input type="password" {...register('password',
+  <input type={showPassword ? 'text' : 'password'}{...register('password',
      {
       required:'password is required',
-        pattern:{
-          value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/ ,
-      message:'should be valid passwoed'
-
-    }
+      
     }
   )}
   className="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1"/>
+   <span className="input-group-text"
+                      id="basic-addon1"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setShowPassword(!showPassword)}>
+                         <i
+          className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`} 
+          aria-hidden="true"
+        ></i>
+                             </span>
    { errors.password&& <div className='alert alert-danger p-2'>{errors.password.message}</div>}
 
 </div>

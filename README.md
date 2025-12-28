@@ -1,16 +1,28 @@
-# React + Vite
+# Project Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Idea/Purpose
+This project is a web application that allows users to manage **categories**, **recipes**, and **users**. It includes a dashboard for managing all the entities and supports authentication for secure access. The primary goal of this project is to create an easy-to-use interface for managing recipe categories and user accounts.
 
-Currently, two official plugins are available:
+## Main Features
+- **Authentication**: Users can log in securely with credentials.
+- **Dashboard**: A user-friendly dashboard to manage recipes, categories, and users.
+- **Recipes**: Ability to view, add, edit, and delete recipes.
+- **Categories**: Manage categories for the recipes.
+- **Users**: Admin users can manage normal users, assign roles, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React, Vite, Bootstrap
 
-## React Compiler
+- **Authentication**: JWT (JSON Web Tokens)
+- **API Communication**: Axios
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup Instructions
 
-## Expanding the ESLint configuration
+### 1. Install Dependencies
+Before running the project, make sure to install the necessary dependencies.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install project dependencies
+npm install
+# Start the development server
+npm run dev
